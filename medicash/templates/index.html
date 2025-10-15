@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MedICash</title>
+  <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+<body>
+  <main>
+    <h1>MedICash</h1>
+    <p>Borderless prepaid and card services for fast, low‑friction remittances.</p>
+
+    <section id="auth">
+      <h2>Sign in (OTP demo)</h2>
+      <input id="email" placeholder="email" />
+      <button onclick="requestOtp()">Request OTP</button>
+      <input id="code" placeholder="code (123456)" />
+      <button onclick="verifyOtp()">Verify</button>
+      <p id="authStatus"></p>
+    </section>
+
+    <section id="cards" style="display:none;">
+      <h2>Cards</h2>
+      <input id="cardLabel" placeholder="Label" />
+      <select id="cardType">
+        <option value="virtual">Virtual</option>
+        <option value="single_use">Single-use</option>
+      </select>
+      <button onclick="createCard()">Create</button>
+      <ul id="cardList"></ul>
+    </section>
+
+    <section id="remit" style="display:none;">
+      <h2>Remittance Quote</h2>
+      <input id="sendAmount" placeholder="Amount" type="number" />
+      <input id="sendCur" placeholder="Send currency (e.g. USD)" />
+      <input id="recvCur" placeholder="Receive currency (e.g. EUR)" />
+      <button onclick="quote()">Quote</button>
+      <pre id="quoteOut"></pre>
+    </section>
+  </main>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
